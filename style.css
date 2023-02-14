@@ -25,15 +25,12 @@ header {
     top: 0;
     position: sticky;
     background: rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 3.5px solid rgba(255, 255, 255, 0.36);
+    box-shadow: 0 1px 20px rgb(87, 0, 250);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     font-size: 20px;
-    height: 15px;
+    height: 5px;
     padding: 40px;
-    margin: 15px;
     font-family: 'Space Mono', monospace;
 
 }
@@ -43,12 +40,12 @@ header a:hover {
 
 }
 
-a {
+header a {
   color: white;
   transition: 0.5s;
 }
 
-a:hover{
+header a:hover{
   color: blueviolet;
   cursor: pointer;
   margin: 15px;
@@ -149,6 +146,7 @@ section {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
   border-radius: 05px;
   margin: 50px;
   padding: 50px;
@@ -185,6 +183,15 @@ section .image-2{
     100%{
         filter: hue-rotate(360deg);
     }
+}
+
+
+section a img {
+  transition: 0.5s;
+}
+
+section a img:hover{
+  transform: scale(1.05);
 }
 
 
