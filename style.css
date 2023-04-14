@@ -12,12 +12,15 @@ body {
   font-family: 'Space Mono', monospace;
 }
 
+
+
+
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   top: 0;
-  position: sticky;
   background: rgba(255, 255, 255, 0.12);
   box-shadow: 0 1px 20px rgb(87, 0, 250);
   backdrop-filter: blur(10px);
@@ -41,6 +44,55 @@ header a:hover{
   padding: 15px;
   transform: scale(1.06);
 }
+
+
+
+
+
+@keyframes changeColor {
+  0% {
+    background-color: rgb(255, 0, 0);
+  }
+  50% {
+    background-color: rgb(0, 255, 0);
+  }
+  100% {
+    background-color: rgb(0, 0, 255);
+  }
+}
+
+.content {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.project {
+  opacity: 0;
+  transform: translateY(500px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.project.in-view {
+  opacity: 1;
+  transform: translateY(100px);
+}
+
+
+#projects {
+  padding-bottom: 300px; /* remplacer 500px par la hauteur de la dernière div */
+}
+
 
 
 .dropbtn {
@@ -89,7 +141,7 @@ header a:hover{
   justify-content:center;
   align-items: center;
   height: 392px;
-  width: 1074px;
+  width: 90%;
   margin: 250px auto;
   font-size: 20px;
   transition: transform .6s;
@@ -111,7 +163,8 @@ header a:hover{
   display: flex;
   justify-content: center;
   height: 300px;
-  margin: 50px;
+  width: 80%;
+  margin: 50px auto;
 
 }
 
@@ -146,6 +199,8 @@ justify-content: center;
 }
 
 section .image {
+  margin: auto;
+width: 99%;
 height: 500px;
 border-radius: 05px;
 
