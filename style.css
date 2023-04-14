@@ -8,7 +8,6 @@
 
 
 body {
-  background:rgb(0, 1, 24);
   font-family: 'Space Mono', monospace;
 }
 
@@ -59,6 +58,10 @@ header a:hover{
   100% {
     background-color: rgb(0, 0, 255);
   }
+}
+#main {
+  height: 100%;
+  width: 100%;
 }
 
 .content {
@@ -135,51 +138,122 @@ header a:hover{
 
 .dropdown:hover .dropdown-content {display: block;}
 
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(168, 239, 255, 1);
+	--c2: rgba(168, 239, 255, 0.1);
+}
 
-.section {
+.wrapper {
+	min-width: min(40rem, 100%);
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+.box {
+	font-size: 3vw;
+	margin: max(1rem, 3vw);
+	border: 0.35rem solid;
+	padding: 3vw;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.box:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+
+
+.box {
   display: flex;
   justify-content:center;
   align-items: center;
   height: 392px;
-  width: 90%;
+  width: 60%;
   margin: 250px auto;
   font-size: 20px;
+  background: rgba(255, 255, 255, 0.12);
   transition: transform .6s;
-  outline-style: solid;
-  outline-color: rgb(84, 0, 139);
   border-radius: 05px;
-  background:rgb(0, 1, 24);
   color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
-.section p {
-  padding: 60px;
-  margin: 60px;
+
+
+.box p {
+  margin: 60px ;
+  text-align: left;
+  align-items: left;
 }
 
-.section .img {
+.box .img {
   display: flex;
   justify-content: center;
   height: 300px;
   width: 80%;
   margin: 50px auto;
-
+  overflow: hidden;
 }
 
-.section img {
+.box img {
 
   border-radius: 5px;
 }
 
 
 
-.section:hover{
-  transform: scale(1.06);
-  bbackground-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
-  animation: rotate 3.0s linear infinite;
-}
+
 
 section {
 display: flex;
@@ -196,6 +270,16 @@ h1 {
   color: white;
 display: flex;
 justify-content: center;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 20px auto;
+  color: white;
+
 }
 
 section .image {
@@ -219,7 +303,7 @@ height: 497px;
 border-radius: 05px;
 }
 
-.center p {
+section p {
   display: flex;
   justify-content: center;
   margin: 15px;
@@ -257,30 +341,57 @@ section a img:hover{
 
 
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  bottom: 15;
-  width: 100%;
-  height: 150px; 
-  background:rgb(0, 1, 24);
-  cursor: pointer;
-}
+
 
 .center img {
   float: left;
 }
 
-footer p {
+
+
+
+
+
+
+
+@keyframes animate {
+
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+
+}
+
+
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  background: #07192F;
+  
+}
+
+footer a {
   font-size: 20px;
   font-weight: 500;
   transition: 0.5s;
+
 }
 
-footer p:hover{
+footer a:hover{
   transform: scale(1.2);
   transform: scale(1.5s);
   color: aqua;
