@@ -1,0 +1,5 @@
+CREATE TABLE visitors (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ip_address VARCHAR(50) NOT NULL,
+    date_time DATETIME NOT NULL
+);

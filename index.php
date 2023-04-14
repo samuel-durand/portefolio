@@ -1,9 +1,16 @@
+<?php 
+
+include('counter.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/build/three.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>portefolio</title>
     <script></script>
@@ -12,9 +19,15 @@
   <div id="main">
     <header>
         <a>samuel durand</a>
+        <p>Nombre de visite <?php echo $nombre_total_de_vues; ?></p>
     </header>
 
-
+        <script>
+      // Rafraîchissement automatique de la page toutes les 5 minutes (300000 millisecondes)
+      setTimeout(function(){
+        location.reload();
+    }, 300000);
+    </script>
 
 
     <div class="content">
@@ -73,7 +86,6 @@
               </section>
          
 
-
             <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
             <script>
@@ -91,6 +103,7 @@
       
 
               </script>
+          </div>
         </div>
     
     <script src="./animation.js"></script>
