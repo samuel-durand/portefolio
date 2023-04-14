@@ -40,10 +40,6 @@ include('counter.php');
         </div>
       </div>
     </div>
-
-
-    
-
             <h1>Projets Réaliser</h1>
             <p>cliquer sur l'image pour voir le projet</p>
             <section id="projects">
