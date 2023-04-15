@@ -16,7 +16,6 @@ include('counter.php');
     <script></script>
 </head>
 <body >
-  <div id="main">
     <header>
         <a>samuel durand</a>
         <p>Nombre de visite <?php echo $nombre_total_de_vues; ?></p>
@@ -28,10 +27,9 @@ include('counter.php');
         location.reload();
     }, 300000);
     </script>
+<div id="test">
 
-
-    <div class="content">
-
+  <div class="content">
     <div class="wrapper">
       <div class="box">
         <div class="img">
@@ -79,38 +77,35 @@ include('counter.php');
                   <p>O'CLOCK</p>
                   <a href="https://samuel-durand.students-laplateforme.io/oclock/" target="_blank"><img class="image" src="./o'clock.PNG" alt=""></a>
                 </div>
+                <div class="project">
+                    <p>Metéo api</p>
+                    <a href="https://samuel-durand.students-laplateforme.io/meteo/"><img class="image" src="meteo.PNG" alt=""></a>
+                </div>
               </section>
-         
+   </div>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
-            <script>
-            VANTA.BIRDS({
-              el: "#main",
-              mouseControls: true,
-              touchControls: true,
-              gyroControls: false,
-              minHeight: 200.00,
-              minWidth: 200.00,
-              scale: 1.00,
-              scaleMobile: 1.00,
-              colorMode: "variance"
-            })
-      
-
-              </script>
-          </div>
-        </div>
-    
-    <script src="./animation.js"></script>
-
-    <script src="loader.js"></script>
+   <script src="animation.js"></script>
     <footer>
       <ul>
         <li><a href="">github</a></li>
       </ul>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+<script>
+VANTA.BIRDS({
+  el: "#test",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00
+})
+</script>
+</div>
 
 </body>
 </html>

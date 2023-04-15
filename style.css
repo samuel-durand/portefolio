@@ -4,10 +4,12 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+  
 }
 
 
 body {
+  background: #07192F;
   font-family: 'Space Mono', monospace;
 }
 
@@ -17,7 +19,7 @@ body {
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   top: 0;
   background: rgba(255, 255, 255, 0.12);
@@ -60,7 +62,7 @@ header a:hover{
   }
 }
 #main {
-  height: 100%;
+  height: 800vh;
   width: 100%;
 }
 
@@ -82,7 +84,7 @@ header a:hover{
 }
 .project {
   opacity: 0;
-  transform: translateY(500px);
+  transform: translateY(400px);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
@@ -93,7 +95,7 @@ header a:hover{
 
 
 #projects {
-  padding-bottom: 300px; /* remplacer 500px par la hauteur de la dernière div */
+  padding-bottom: 100px; /* remplacer 500px par la hauteur de la dernière div */
 }
 
 
@@ -263,7 +265,6 @@ align-items: center;
 cursor: pointer;
 border-radius: 05px;
 margin: 50px;
-padding: 50px;
 }
 
 h1 {
